@@ -125,7 +125,7 @@ author:
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-in"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/dongheon97/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
