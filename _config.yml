@@ -113,7 +113,7 @@ analytics:
 # Site Author
 author:
   name             : "Dongheon Lee"
-  avatar           : "/assets/images/bio-photo.JPG"
+  avatar           : "/assets/images/bio-photo.jpeg"
   bio              : "M.S. in Electrical & Computer Engineering @ Purdue University"
   location         : "West Lafayette, United States"
   email            :
