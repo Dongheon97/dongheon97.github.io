@@ -115,18 +115,18 @@ analytics:
 author:
   name             : "Dongheon Lee"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "M.S. in Electrical & Computer Engineering | Automatic Control @ Purdue University"
+  bio              : "M.S. in Electrical & Computer Engineering </br> Automatic Control @ Purdue University"
   location         : "West Lafayette, United States"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:your.name@email.com"
+      url: "dongheon.lee97@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/dongheon97/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
