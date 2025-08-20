@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "CUDA Programming on Linux"
+categories: [Study]
+tags: [cuda, gpu, parallel programming]
 ---
 
 ## Environment Setting
