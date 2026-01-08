@@ -1,0 +1,48 @@
+---
+import Section from '../ui/Section.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+import Container from '../ui/Container.astro';
+import Chip from '../ui/Chip.astro';
+import Card from '../ui/Card.astro';
+
+interface Category {
+  title: string;
+  keywords: string[];
+  highlight_line: string;
+}
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+<Section id="expertise" class="bg-gray-50">
+  <Container>
+    <SectionTitle
+      title="Expertise"
+      subtitle="Skills and technologies I work with"
+    />
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {categories.map((category) => (
+        <Card class="p-6 h-full hover:shadow-xl transition-shadow duration-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            {category.title}
+          </h3>
+          <p class="text-lg text-gray-600 mb-4 italic">
+            {category.highlight_line}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {category.keywords.map((keyword) => (
+              <Chip>
+                {keyword}
+              </Chip>
+            ))}
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</Section>

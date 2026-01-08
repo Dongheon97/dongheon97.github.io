@@ -1,0 +1,16 @@
+---
+import Container from './Container.astro';
+
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id, class: className = '' } = Astro.props;
+---
+
+<Container class={`py-16 md:py-24 ${className}`}>
+  <div id={id} class={className}>
+    <slot />
+  </div>
+</Container>

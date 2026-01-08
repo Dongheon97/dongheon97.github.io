@@ -1,0 +1,55 @@
+---
+import Section from '../ui/Section.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+
+interface Publication {
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  doi_url: string;
+  pdf_path: string;
+}
+
+interface Props {
+  publications: Publication[];
+}
+
+const { publications } = Astro.props;
+---
+
+<Section id="publications" class="bg-gray-50">
+  <Container>
+    <SectionTitle
+      title="Publications"
+      subtitle="Research papers and articles"
+    />
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {publications.map((pub) => (
+        <Card class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            {pub.title}
+          </h3>
+          <p class="text-lg text-gray-600 mb-3">
+            {pub.authors}
+          </p>
+          <p class="text-base text-gray-500 mb-4">
+            <strong>{pub.venue}</strong> • {pub.year}
+          </p>
+          <div class="flex gap-3">
+            <Button href={pub.doi_url} variant="secondary" target="_blank" class="text-base">
+              View DOI
+            </Button>
+            <Button href={pub.pdf_path} variant="ghost" class="text-base">
+              Download PDF
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</Section>
