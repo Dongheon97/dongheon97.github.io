@@ -75,7 +75,7 @@
         "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
       "links": {},
-      "thumbnail": "/projects/lidar-autonomy.jpg"
+      "thumbnail": "/portfolio/projects/ai-chatbot.png"
     },
     {
       "slug": "squirrel-uav-swarm",
@@ -115,7 +115,7 @@
         "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
       "links": {},
-      "thumbnail": "/projects/squirrel.jpg"
+      "thumbnail": "/portfolio/projects/analytics-dashboard.png"
     },
     {
       "slug": "gps-denied-3d-mapping",
@@ -155,7 +155,7 @@
         "embed_url": "https://youtu.be/l6NRirrmg5o"
       },
       "links": {},
-      "thumbnail": "portfolio/public/images/gdin.jpeg"
+      "thumbnail": "/portfolio/projects/ecommerce-platform.png"
     },
     {
       "slug": "automated-shot-group-measurement",
@@ -213,7 +213,7 @@
       "venue": "Korean Institute of Information Scientists and Engineers (KIICE)",
       "year": "2021",
       "doi_url": "",
-      "pdf_path": "/portfolio/pdf/kiice-2021.pdf"
+      "pdf_path": ""
     }
   ],
   "experience": [

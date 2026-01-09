@@ -41,12 +41,16 @@ const { publications } = Astro.props;
             <strong>{pub.venue}</strong> • {pub.year}
           </p>
           <div class="flex gap-3">
-            <Button href={pub.doi_url} variant="secondary" target="_blank" class="text-base">
-              View DOI
-            </Button>
-            <Button href={pub.pdf_path} variant="ghost" class="text-base">
-              Download PDF
-            </Button>
+            {pub.doi_url && (
+              <Button href={pub.doi_url} variant="secondary" target="_blank" class="text-base">
+                View DOI
+              </Button>
+            )}
+            {pub.pdf_path && (
+              <Button href={pub.pdf_path} variant="ghost" class="text-base">
+                Download PDF
+              </Button>
+            )}
           </div>
         </Card>
       ))}
