@@ -18,6 +18,10 @@ interface Project {
     type: 'youtube' | 'vimeo';
     embed_url: string;
   };
+  sub_media?: {
+    type: 'youtube' | 'vimeo';
+    embed_url: string;
+  };
   links?: {
     github?: string;
     demo?: string;
@@ -198,6 +202,18 @@ export default function ProjectModal({ isOpen, projectSlug, onClose }: Props) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title={`${project.title} demo`}
+              />
+            </div>
+          </div>
+
+          <div>
+            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+              <iframe
+                src={project.sub_media.embed_url}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={`${project.title} sub demo`}
               />
             </div>
           </div>

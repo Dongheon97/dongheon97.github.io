@@ -48,7 +48,7 @@ const baseUrl = import.meta.env.BASE_URL;
               </Button>
             )}
             {pub.pdf_path && (
-              <Button href={`${baseUrl}${pub.pdf_path}`} variant="ghost" class="text-base">
+              <Button href={`${baseUrl}${pub.pdf_path.startsWith('/') ? pub.pdf_path.slice(1) : pub.pdf_path}`} variant="ghost" class="text-base">
                 Download PDF
               </Button>
             )}

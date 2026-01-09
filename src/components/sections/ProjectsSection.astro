@@ -33,7 +33,7 @@ const baseUrl = import.meta.env.BASE_URL;
         >
           <div class="aspect-video bg-gray-100 overflow-hidden">
             <img
-              src={`${baseUrl}${project.thumbnail}`}
+              src={`${baseUrl}${project.thumbnail.startsWith('/') ? project.thumbnail.slice(1) : project.thumbnail}`}
               alt={`${project.title} thumbnail`}
               class="w-full h-full object-cover"
               loading="lazy"
@@ -148,6 +148,14 @@ const baseUrl = import.meta.env.BASE_URL;
           html += '<iframe src="' + project.media.embed_url + '" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="' + project.title + ' demo"></iframe>';
           html += '</div>';
           html += '</div>';
+
+          if (project.sub_media) {
+            html += '<div class="mb-8">';
+            html += '<div class="aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg">';
+            html += '<iframe src="' + project.sub_media.embed_url + '" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="' + project.title + ' sub demo"></iframe>';
+            html += '</div>';
+            html += '</div>';
+          }
 
           if (project.links) {
             html += '<div>';
