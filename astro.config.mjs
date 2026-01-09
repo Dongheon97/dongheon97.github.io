@@ -10,5 +10,4 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: 'https://dongheon97.github.io',
-  base: '/portfolio',
 });
