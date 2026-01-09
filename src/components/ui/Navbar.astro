@@ -8,6 +8,7 @@ const navItems = [
   { name: "Education", href: "#education" },
   { name: "Publications", href: "#publications" }, // Contact usually in Hero or Footer, mapping to Hero for now as per common pattern or I can add a footer contact later. But prompt says "Contact". Let's assume it links to hero or a footer. Actually, usually "Get in Touch" is in Hero. I'll link to Hero.
 ];
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <header
@@ -16,7 +17,7 @@ const navItems = [
 >
   <Container>
     <nav class="flex items-center justify-between">
-      <a href="#" class="text-2xl font-bold text-gray-900 z-50 relative">
+      <a href={baseUrl} class="text-2xl font-bold text-gray-900 z-50 relative">
         Portfolio
       </a>
 

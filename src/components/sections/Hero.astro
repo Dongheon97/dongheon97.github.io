@@ -20,6 +20,7 @@ interface Props {
 
 const { name, role_title, one_liner, profile_image, location, links } =
   Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Section id="hero" class="min-h-screen flex items-center py-20">
@@ -31,7 +32,7 @@ const { name, role_title, one_liner, profile_image, location, links } =
           <div class="w-64 h-64 md:w-96 md:h-96 flex-shrink-0 relative">
             <div class="absolute inset-0 bg-blue-600 rounded-full blur-3xl opacity-20 animate-pulse" />
             <img
-              src={profile_image}
+              src={`${baseUrl}${profile_image}`}
               alt={name}
               class="w-full h-full object-cover rounded-full border-4 border-white shadow-2xl relative z-10"
             />
@@ -70,7 +71,7 @@ const { name, role_title, one_liner, profile_image, location, links } =
           </Button>
           {
             links.cv_pdf && (
-              <Button href={links.cv_pdf} variant="secondary" class="text-lg px-8 py-4">
+              <Button href={`${baseUrl}${links.cv_pdf}`} variant="secondary" class="text-lg px-8 py-4">
                 📄 Download CV
               </Button>
             )
