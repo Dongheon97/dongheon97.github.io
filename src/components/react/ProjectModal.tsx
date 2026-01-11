@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import siteContent from '../../content/site.json';
+import siteContent from '../../content/site';
 
 interface Project {
   slug: string;
@@ -17,15 +17,18 @@ interface Project {
   media: {
     type: 'youtube' | 'vimeo';
     embed_url: string;
+    description?: string;
   };
   sub_media?: {
     type: 'youtube' | 'vimeo';
     embed_url: string;
+    description?: string;
   };
   links?: {
     github?: string;
-    demo?: string;
     paper?: string;
+    project?: string;
+    team?: string;
     slides?: string;
   };
 }
@@ -204,21 +207,29 @@ export default function ProjectModal({ isOpen, projectSlug, onClose }: Props) {
                 title={`${project.title} demo`}
               />
             </div>
+            {project.media.description && (
+              <p className="text-sm text-gray-600 mt-2">{project.media.description}</p>
+            )}
           </div>
 
-          <div>
-            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
-              <iframe
-                src={project.sub_media.embed_url}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={`${project.title} sub demo`}
-              />
+          {project.sub_media && (
+            <div>
+              <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                <iframe
+                  src={project.sub_media.embed_url}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={`${project.title} sub demo`}
+                />
+              </div>
+              {project.sub_media.description && (
+                <p className="text-sm text-gray-600 mt-2">{project.sub_media.description}</p>
+              )}
             </div>
-          </div>
+          )}
 
-          {project.links && (project.links.github || project.links.demo || project.links.paper || project.links.slides) && (
+          {project.links && (project.links.github || project.links.paper || project.links.slides || project.links.project || project.links.team) && (
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 🔗 Links
@@ -232,16 +243,6 @@ export default function ProjectModal({ isOpen, projectSlug, onClose }: Props) {
                     className="px-4 py-2 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-200 transition-colors"
                   >
                     GitHub
-                  </a>
-                )}
-                {project.links.demo && (
-                  <a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                  >
-                    Live Demo
                   </a>
                 )}
                 {project.links.paper && (
@@ -262,6 +263,25 @@ export default function ProjectModal({ isOpen, projectSlug, onClose }: Props) {
                     className="px-4 py-2 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-200 transition-colors"
                   >
                     Slides
+                  </a>
+                )}
+                {project.links.project && (
+                  <a
+                    href={project.links.project}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-200 transition-colors"
+                  >
+                    Challenge Description
+                  </a>
+                )}{project.links.team && (
+                  <a
+                    href={project.links.team}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-200 transition-colors"
+                  >
+                    Team Description
                   </a>
                 )}
               </div>

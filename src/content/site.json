@@ -16,22 +16,22 @@
     "categories": [
       {
         "title": "Robotics & Autonomous Systems",
-        "keywords": ["ROS 1/2", "PX4 Autopilot", "Gazebo", "Isaac Sim", "MPPI", "MPC", "Sim-to-Real Transfer"],
+        "keywords": ["ROS 1/2", "PX4 Autopilot", "Gazebo", "Isaac Sim"],
         "highlight_line": "Building autonomous UAV systems from simulation to real-world deployment"
       },
       {
         "title": "Programming & Development",
-        "keywords": ["C/C++", "Python", "Java", "Bash", "MySQL", "CMake"],
+        "keywords": ["C/C++", "Python", "Java", "MySQL", "CMake", "Bash", "Git", "Docker"],
         "highlight_line": "Developing robust software for robotics and embedded systems"
       },
       {
-        "title": "Machine Learning & Computer Vision",
-        "keywords": ["TensorFlow", "PyTorch", "YOLO", "3D Gaussian Splatting", "Federated Learning"],
+        "title": "Machine Learning",
+        "keywords": ["TensorFlow", "PyTorch", "Object Detection", "Gaussian Splatting", "Reinforcement Learning", "Federated Learning"],
         "highlight_line": "Applying ML and CV to robotics and sensing applications"
       },
       {
         "title": "Hardware & Integration",
-        "keywords": ["Pixhawk", "VOXL (ModalAI)", "FPV Drones", "3D Printers", "Microhard", "DoodleLabs", "LoRa", "Raspberry Pi"],
+        "keywords": ["Pixhawk", "VOXL (ModalAI)", "STM32", "FPV Drones", "3D Printers", "Microhard", "DoodleLabs"],
         "highlight_line": "Integrating custom hardware for autonomous systems"
       }
     ]
@@ -40,126 +40,132 @@
     {
       "slug": "lidar-autonomy-evaluation",
       "title": "Evaluating Trade-offs Between LiDAR Specifications and Autonomy Performance",
-      "one_liner": "Migrated navigation stack from ROS 1 to ROS 2 and evaluated LiDAR specifications for drone autonomy",
-      "tags": ["ROS 1", "ROS 2", "RRT", "Path Planning", "Collision Avoidance", "Simulation"],
+      "one_liner": "Built a closed-loop autonomy evaluation framework to quantify how LiDAR specifications impact drone navigation and replanning performance",
+      "tags": ["ROS 1/2", "Sensor Fusion", "LiDAR", "RRT", "Path Planning", "Collision Avoidance", "Simulation"],
       "timeframe": "Apr 2025 – Jul 2025",
       "role": "Software Engineer",
       "team": "Applied Intuition with Korean Tier-1 sensor supplier",
-      "stack": ["ROS 1", "ROS 2", "Python", "C++", "Gazebo", "Applied Intuition Simulation"],
+      "stack": ["ROS 1/2", "Python", "C++", "Gazebo", "Applied Intuition Simulation"],
       "problem": [
-        "GPS-denied indoor navigation needed ROS 2 migration",
-        "LiDAR specifications varied widely but performance impact unclear",
-        "Dense urban drone scenarios required robust path planning",
-        "Needed quantitative evaluation framework for autonomy performance"
+        "Different LiDAR configurations (range, FOV, angular resolution, noise) produced drastically different mapping quality and planner behavior, but their impact on autonomy was not quantitatively understood",
+        "In-house simulation infrastructure only supported ROS 2, requiring migration of a legacy ROS 1-based 3D mapping and navigation stack",
+        "Dense urban drone scenarios required frequent replanning and reliable collision avoidance",
+        "Sensor vendors and autonomy teams lacked a principled way to compare LiDAR options for real-world deployment"
       ],
       "approach": [
-        "Migrated GPS-denied indoor navigation stack from ROS 1 to ROS 2",
-        "Integrated with simulation APIs for consistent testing environment",
-        "Implemented RRT-based path planning and collision avoidance",
-        "Built evaluation pipelines measuring success rate, completion time, replanning count, and path length"
+        "Migrated a GPS-denied drone navigation stack from ROS 1 to ROS 2 on an in-house simulation platform",
+        "Built a closed-loop autonomy evaluation pipeline connecting LiDAR simulation, mapping, RRT-based planning, collision checking, and replanning",
+        "Parameterized LiDAR models in simulation to vary range, FOV, angular resolution, and noise characteristics",
+        "Designed experimental protocols and evaluation pipelines measuring success rate, completion time, replanning frequency, and path efficiency across sensor configurations"
       ],
       "contributions": [
-        "Successfully migrated entire navigation stack from ROS 1 to ROS 2",
-        "Developed comprehensive evaluation metrics framework",
-        "Implemented robust collision avoidance for dense urban scenarios",
-        "Delivered detailed analysis of LiDAR specification trade-offs"
+        "Designed and implemented a sensor-to-autonomy evaluation framework linking LiDAR specifications to navigation outcomes",
+        "Identified critical LiDAR parameter regimes that directly affect planner stability and mission success",
+        "Developed standardized autonomy metrics enabling objective comparison between sensor configurations",
+        "Produced decision-grade analysis used by autonomy and hardware teams to evaluate LiDAR trade-offs"
       ],
       "results": [
-        "Completed full ROS 1 to ROS 2 migration maintaining functionality",
-        "Provided quantitative insights on LiDAR performance trade-offs",
-        "Findings led to proof-of-concept agreement between collaborating companies",
-        "Established standardized evaluation framework for future sensor comparisons"
+        "Successfully migrated and validated a full ROS 1 autonomy stack on ROS 2 without loss of functionality",
+        "Quantified how LiDAR range, FOV, and resolution influence replanning behavior, path efficiency, and failure rates",
+        "Analysis directly supported proof-of-concept agreements between collaborating companies",
+        "Established a reusable evaluation framework for future LiDAR and perception system benchmarking"
       ],
       "media": {
         "type": "youtube",
-        "embed_url": "https://www.youtube.com/embed/OOjkADXE0zU"
+        "embed_url": "https://www.youtube.com/embed/OOjkADXE0zU",
+        "description": "In-house simulation showing LiDAR point clouds (left) and a drone navigating a dense urban environment (right)."
       },
       "sub_media": {
         "type": "youtube",
-        "embed_url": "https://www.youtube.com/embed/97EqxBJj24M"
+        "embed_url": "https://www.youtube.com/embed/97EqxBJj24M",
+        "description": "Engineering view of 3D mapping and path planning. The RGB-D map is built from fused LiDAR and camera data, while the green line shows the planned trajectory and waypoints. The system performs real-time collision checking and replanning for autonomous flight."
       },
       "links": {},
-      "thumbnail": "projects/ai-chatbot.png"
+      "thumbnail": "projects/lidar_eval/poc_thumbnail.png"
     },
     {
-      "slug": "squirrel-uav-swarm",
-      "title": "SQUIRREL - Multi-Agent UAV System",
-      "one_liner": "DARPA-funded project: architected multi-agent UAV system with robust mesh networking",
-      "tags": ["ROS 2", "PX4", "Mesh Networking", "Swarm Robotics", "JSON-RPC"],
+      "slug": "multi-agent-uav-mesh-network",
+      "title": "Multi-Agent UAV Systems with Mesh-Based Communication",
+      "one_liner": "Designed and implemented a scalable multi-agent UAV system using mesh networking for robust real-time coordination",
+      "tags": ["ROS 2", "PX4", "Multi-Agent Systems", "Mesh Networking", "Swarm Robotics", "Distributed Systems"],
       "timeframe": "May 2024 – Nov 2024",
       "role": "Software Engineer",
-      "team": "DARPA-funded project",
+      "team": "EpiSci SwarmSense Team",
       "stack": ["ROS 2", "PX4", "VOXL", "Python", "C++", "Mesh Radios"],
       "problem": [
-        "Multi-agent UAV systems needed robust communication in contested environments",
-        "Network overhead limited swarm scalability and coordination",
-        "Hardware integration required custom solutions for mesh networking",
-        "Real-time exchange of network, battery, and GPS data needed for swarm coordination"
+        "Multi-agent UAV systems require reliable communication to coordinate in dynamic and partially connected environments",
+        "Network overhead and latency limited scalability as the number of UAVs increased",
+        "Hardware-level mesh networking required custom integration with onboard computers and radios",
+        "Swarm coordination depended on real-time exchange of network status, battery, and localization data"
       ],
       "approach": [
-        "Architected multi-agent UAV system with mesh networking between ground and soldier agents",
-        "Implemented serialization optimizations and JSON-RPC for efficient communication",
-        "Led hardware integration with custom 3D-printed components and mesh radio tuning",
-        "Developed swarm manager for real-time data exchange and coordination"
+        "Designed a multi-agent UAV architecture with decentralized mesh-based communication between aerial and ground nodes",
+        "Implemented lightweight serialization and JSON-RPC interfaces for efficient inter-agent messaging",
+        "Integrated mesh radios with onboard computers using custom mounts and RF tuning",
+        "Developed a swarm manager to aggregate and distribute real-time network, battery, and position data"
       ],
       "contributions": [
-        "Designed and implemented robust mesh networking architecture",
-        "Reduced network overhead by 50% through serialization optimizations",
-        "Led hardware integration with 3D-printed components and radio tuning",
-        "Built swarm manager enabling real-time coordination across agents"
+        "Designed and implemented a scalable mesh networking layer for multi-agent UAV coordination",
+        "Reduced communication overhead by 50% through custom message serialization and protocol optimization",
+        "Led hardware–software integration of mesh radios on UAV platforms"
       ],
       "results": [
-        "Reduced network overhead by 50% improving swarm scalability",
-        "Successfully demonstrated multi-agent coordination in field tests",
-        "Delivered robust mesh networking system for contested environments",
-        "Enabled real-time exchange of critical swarm data (network, battery, GPS)"
+        "Achieved reliable multi-agent coordination under intermittent and bandwidth-limited network conditions",
+        "Demonstrated scalable swarm operation with significantly reduced communication overhead",
+        "Validated mesh-based communication as a viable backbone for distributed UAV systems",
+        "Enabled real-time sharing of critical agent states including network health, battery, and position"
       ],
       "media": {
         "type": "youtube",
-        "embed_url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        "embed_url": "https://youtube.com/embed/75kVha7HXeQ",
+        "description": "Field test of a multi-agent UAV system with one user entity (lead UAV), one ground control station (GCS), and three relay UAVs. As the lead UAV moves out of direct communication range, relay drones autonomously take off and position themselves to form a mesh network that maintains connectivity between the UAV and the GCS. The GUI in the lower-left shows real-time network status, battery levels, and positions of all agents. UAVs automatically return to their launch point for battery replacement and rejoin the mission, demonstrating persistent and self-maintaining swarm operation."
       },
       "links": {},
-      "thumbnail": "projects/analytics-dashboard.png"
+      "thumbnail": "projects/swarm/mesh_network_thumbnail.png"
     },
     {
       "slug": "gps-denied-3d-mapping",
       "title": "GPS-Denied Indoor Navigation – NIST 5.0 3D Mapping Challenge",
       "one_liner": "Implemented advanced 3D mapping using Gaussian Splatting for GPS-denied environments",
-      "tags": ["ROS", "Gaussian Splatting", "Voxblox", "3D Object Detection", "VOXL", "PX4"],
+      "tags": ["ROS 1", "Gaussian Splatting", "3D Mapping", "3D Object Detection", "VOXL", "PX4"],
       "timeframe": "Jun 2023 – Oct 2024",
       "role": "Software Engineer",
-      "team": "EpiSci | NIST Challenge",
+      "team": "EpiSci SwarmSense Team",
       "stack": ["ROS", "Gaussian Splatting", "Voxblox", "MeshLab", "VOXL-PX4", "Python"],
       "problem": [
-        "GPS-denied environments required robust 3D mapping and navigation",
-        "Standard mapping produced low-quality results in complex indoor environments",
-        "Needed real-time 3D object detection overlay on maps",
-        "Cost constraints required building capable FPV drone under $2,500"
+        "GPS-denied indoor environments require accurate and consistent 3D world models for autonomous navigation",
+        "Real-time SLAM and voxel mapping produced noisy and incomplete meshes in cluttered indoor scenes",
+        "Autonomy teams and operators needed a higher-fidelity 3D representation for inspection, planning, and situational awareness",
+        "Vision and LiDAR data needed to be fused into a single spatially consistent map"
       ],
       "approach": [
-        "Implemented post-processing pipelines for high-quality 3D mapping using Gaussian Splatting",
-        "Developed ROS-based 3D object detection overlaying bounding boxes on Voxblox mesh maps",
-        "Customized VOXL-PX4 firmware for range-sensor-based VIO correction",
-        "Built custom FPV drone with optimized components"
+        "Built a perception-to-mapping pipeline combining VOXL-based visual–inertial odometry, LiDAR depth, and Voxblox voxel mapping",
+        "Applied Gaussian Splatting to convert noisy voxel meshes into high-quality 3D reconstructions for evaluation and inspection",
+        "Integrated ROS-based 3D object detection and overlaid detected objects directly on the 3D map",
+        "Customized VOXL–PX4 firmware to improve VIO, depth alignment, and mapping stability in GPS-denied environments"
       ],
       "contributions": [
-        "Implemented Gaussian Splatting pipeline for high-quality 3D reconstruction",
-        "Developed 3D object detection system overlaying results on mesh maps",
-        "Customized VOXL-PX4 firmware for improved VIO in GPS-denied environments",
-        "Built custom FPV drone achieving 15+ minute flight time"
+        "Designed and implemented a full perception and 3D mapping pipeline for indoor autonomous flight",
+        "Significantly improved map fidelity using Gaussian Splatting on top of real-time voxel maps",
+        "Integrated object detection into the 3D world model for autonomy and operator use",
+        "Enhanced VOXL–PX4 sensor fusion for more stable localization in GPS-denied environments"
       ],
       "results": [
-        "Achieved high-quality 3D mapping in complex GPS-denied environments",
-        "Successfully integrated 3D object detection with mapping pipeline",
-        "Built FPV drone with 15+ minute flight time under $2,500 budget",
-        "Competed in NIST 5.0 3D Mapping Challenge"
+        "Reached the final stage of NIST 5.0 3D Mapping Challenge",
+        "Produced high-fidelity 3D reconstructions of complex indoor environments from real UAV flight data",
+        "Enabled reliable navigation and inspection in GPS-denied spaces using LiDAR–vision fused maps",
+        "Delivered a 3D world model suitable for both autonomy algorithms and human operators"
       ],
       "media": {
         "type": "youtube",
-        "embed_url": "https://youtu.be/l6NRirrmg5o"
+        "embed_url": "https://youtube.com/embed/j0OiYkcyra4",
+        "description": "Real-world flight demonstrating real-time 3D mapping and post-processed high-fidelity reconstruction. The top-left shows the UAV in flight, the bottom-left shows live 3D mapping, and the right shows the onboard camera stream. After the flight, recorded data is processed with Gaussian Splatting to rapidly generate a significantly higher-quality 3D map."
       },
-      "links": {},
-      "thumbnail": "projects/ecommerce-platform.png"
+      "links": {
+        "project": "https://www.nist.gov/ctl/pscr/open-innovation-prize-challenges/past-prize-challenges/2023-first-responder-uas-3d-mapping",
+        "team": "https://www.nist.gov/ctl/pscr/episci"
+      },
+      "thumbnail": "projects/gps-denied-indoor-nav/gdin_thumbnail.png"
     },
     {
       "slug": "automated-shot-group-measurement",
@@ -167,8 +173,8 @@
       "one_liner": "IEEE-published vision-based system for remote ballistic analysis with 91.8% accuracy",
       "tags": ["OpenCV", "YOLO", "Image Processing", "IoT", "Raspberry Pi", "LoRa"],
       "timeframe": "Dec 2021 – Aug 2022",
-      "role": "Research Assistant",
-      "team": "Purdue University",
+      "role": "Research Intern",
+      "team": "Chungnam National University & Purdue University",
       "stack": ["Python", "OpenCV", "YOLOv3", "Raspberry Pi", "LoRa", "IoT Sensors"],
       "problem": [
         "Manual shot group measurement was time-consuming and error-prone",
@@ -196,10 +202,11 @@
       ],
       "media": {
         "type": "youtube",
-        "embed_url": "https://youtube.com/embed/l6NRirrmg5o"
+        "embed_url": "https://youtube.com/embed/l6NRirrmg5o",
+        "description": "dddd"
       },
       "links": {},
-      "thumbnail": "images/shot_tracker.jpeg"
+      "thumbnail": "projects/shot_tracker/shot_tracker.jpeg"
     }
   ],
   "publications": [
@@ -259,7 +266,7 @@
       ]
     },
     {
-      "org": "EpiSci",
+      "org": "EpiSci (Acquired by Applied Intuition)",
       "title": "Software Engineering Intern",
       "start": "Sep 2022",
       "end": "Sep 2023",
@@ -269,39 +276,6 @@
         "Developed frontier-based exploration and object detection modules for PX4-based drones",
         "Built ATAK Android plugin for drone control and monitoring",
         "Earned FAA Part 107 certification"
-      ]
-    },
-    {
-      "org": "Distributed Networks & Computing Lab",
-      "title": "Research Assistant",
-      "start": "Mar 2022",
-      "end": "Jun 2022",
-      "location": "Daejeon, South Korea",
-      "bullets": [
-        "Studied federated and distributed learning algorithms, improving model accuracy from 70% (individual) to 90% (aggregated)",
-        "Built federated learning system using five Raspberry Pi devices with local training and centralized aggregation"
-      ]
-    },
-    {
-      "org": "Purdue University",
-      "title": "Research Assistant",
-      "start": "Jan 2022",
-      "end": "Feb 2022",
-      "location": "West Lafayette, IN, U.S.A.",
-      "bullets": [
-        "Led development of vision-based shot group measurement system using bullet hole detection and image matching",
-        "Resulted in peer-reviewed publication (IEEE Sensors Applications Symposium)"
-      ]
-    },
-    {
-      "org": "Data Networks Lab",
-      "title": "Research Assistant",
-      "start": "Aug 2021",
-      "end": "Dec 2021",
-      "location": "Daejeon, South Korea",
-      "bullets": [
-        "Developed automated testing framework using JavaScript-controlled tapping robot for iOS and Android apps",
-        "Conducted execution-time comparisons and contributed to academic publication"
       ]
     }
   ],
@@ -314,8 +288,7 @@
       "end": "Present",
       "bullets": [
         "GPA: 3.61 / 4.0",
-        "Specializing in automatic control with interests in reinforcement learning, autonomous systems, and distributed robotics",
-        "Researching optimization-based control of fixed-wing UAVs"
+        "Specializing in automatic control with interests in reinforcement learning, autonomous systems, and distributed robotics"
       ]
     },
     {
@@ -326,9 +299,7 @@
       "end": "Feb 2023",
       "bullets": [
         "GPA: 3.88 / 4.0 (3rd out of 102 students)",
-        "Full Scholarship: 4 semesters",
-        "Partial Scholarship: 3 semesters",
-        "Received Sejong City Foundation Scholarship (Jan 2020)"
+        "Strong foundation in computer science and software engineering"
       ]
     }
   ],
