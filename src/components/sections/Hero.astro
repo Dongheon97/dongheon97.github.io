@@ -38,9 +38,9 @@ const baseUrl = import.meta.env.BASE_URL;
           </div>
         )
       } -->
-  <div class="grid grid-cols-12 items-center gap-10 w-full">
+  <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-10 w-full">
     {profile_image && (
-      <div class="col-span-12 md:col-span-4 md:col-start-2 w-64 h-64 md:w-96 md:h-96 relative mx-auto md:mx-0">
+      <div class="col-span-1 md:col-span-4 md:col-start-2 w-64 h-64 md:w-96 md:h-96 relative mx-auto md:mx-0">
         <div class="absolute inset-0 bg-blue-600 rounded-full blur-3xl opacity-20 animate-pulse" />
         <img
           src={`${baseUrl}${profile_image}`}
@@ -51,7 +51,7 @@ const baseUrl = import.meta.env.BASE_URL;
     )}
 
       <!-- Content -->
-      <div class="col-span-12 md:col-span-6 md:col-start-6 text-center md:text-left space-y-8">
+      <div class="col-span-1 md:col-span-6 md:col-start-6 text-center md:text-left space-y-8">
         <div>
           <h1
             class="text-6xl md:text-8xl font-bold text-gray-900 leading-tight mb-4"
