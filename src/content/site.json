@@ -168,63 +168,92 @@
       "thumbnail": "projects/gps-denied-indoor-nav/gdin_thumbnail.png"
     },
     {
+      "slug": "beyondgrip-slip-recovery",
+      "title": "BeyondGrip – Physics-Informed RL for Slip Recovery",
+      "one_liner": "Team project on using physics-informed reinforcement learning to recover racecars from loss of tire grip",
+      "tags": ["Reinforcement Learning", "Vehicle Dynamics", "Assetto Corsa", "SAC", "TD3"],
+      "timeframe": "Fall 2025",
+      "role": "Team Project",
+      "team": "Purdue University",
+      "stack": ["Python", "PyTorch", "Assetto Corsa Gym", "SAC", "TD3", "MPC"],
+      "problem": [
+        "Racecars frequently lose stability due to oversteer, understeer, and traction loss, requiring rapid corrective control",
+        "Standard RL agents trained by trial-and-error struggle to recover from out-of-distribution slip conditions",
+        "Purely data-driven policies lack physical awareness of tire grip, load transfer, and slip dynamics"
+      ],
+      "approach": [
+        "Built a multi-phase control framework consisting of MPC-based speed-up, slip induction, and RL-based recovery",
+        "Designed physics-informed reward functions using slip angle, slip ratio, wheel load, and steering dynamics",
+        "Trained SAC and TD3 agents in targeted slip scenarios within the Assetto Corsa high-fidelity racing simulator"
+      ],
+
+      "contributions": [
+        "Set up and documented the Assetto Corsa simulation environment and training pipeline",
+        "Designed slip-induction and recovery scenarios with phase-based control handoff between MPC and RL",
+        "Implemented training scripts coordinating launch, slip, and recovery phases",
+        "Fine-tuned SAC and TD3 models for stable and fast slip recovery"
+      ],
+
+      "results": [
+        "Physics-informed TD3 achieved significantly higher recovery success rates under out-of-distribution slip conditions",
+        "Demonstrated faster and more stable recovery compared to standard SAC and TD3 baselines",
+        "Showcased real-time recovery behavior in high-fidelity racing simulations"
+      ],
+      "media": {
+        "type": "youtube",
+        "embed_url": "https://youtube.com/embed/PF0iw8FWM3U",
+        "description": "Demo in the Assetto Corsa simulator. The car is first accelerated using an MPC controller, a slip event is then induced, and an RL controller takes over to recover the vehicle back to a stable driving state."
+      },
+      "links": {
+        "slides": "https://docs.google.com/presentation/d/1ce0av-2WN4mu0gjzh9y-z4s9mejARhAe47wh14bNHGg/edit?usp=sharing"
+      },
+      "thumbnail": "projects/slip_recovery/slip_recovery_thumbnail.png"
+    },
+    {
       "slug": "automated-shot-group-measurement",
-      "title": "Automated Shot Group Size Measuring System",
-      "one_liner": "IEEE-published vision-based system for remote ballistic analysis with 91.8% accuracy",
+      "title": "Automated Shot Group Measurement System",
+      "one_liner": "IEEE-published vision-based system for remote and contactless shot group measurement with 91.8% accuracy",
       "tags": ["OpenCV", "YOLO", "Image Processing", "IoT", "Raspberry Pi", "LoRa"],
       "timeframe": "Dec 2021 – Aug 2022",
       "role": "Research Intern",
       "team": "Chungnam National University & Purdue University",
       "stack": ["Python", "OpenCV", "YOLOv3", "Raspberry Pi", "LoRa", "IoT Sensors"],
+
       "problem": [
-        "Manual shot group measurement was time-consuming and error-prone",
-        "Remote ballistic analysis required automated, contactless measurement",
-        "Needed high accuracy for precision shooting analysis",
-        "Integration of IoT components for remote data collection required"
+        "Manual shot group measurement is slow, labor-intensive, and prone to human error",
+        "Remote ballistic analysis requires automated and contactless data collection",
+        "Precision shooting analysis demands high measurement accuracy",
+        "Distributed sensors and communication are needed to support remote operation"
       ],
+
       "approach": [
-        "Led development of vision-based shot group measurement system",
-        "Implemented bullet hole detection using OpenCV-based image warping and alignment",
-        "Trained YOLOv3 models optimized for embedded inference",
-        "Integrated IoT components including Raspberry Pi, sound sensors, cameras, and LoRa"
+        "Developed a vision-based system to detect and localize bullet holes on a target",
+        "Applied image warping and alignment to compensate for camera perspective and target deformation",
+        "Trained and optimized YOLOv3 models for bullet hole detection on embedded hardware",
+        "Integrated Raspberry Pi, cameras, acoustic sensors, and LoRa for end-to-end data collection"
       ],
+
       "contributions": [
-        "Led complete system development from concept to implementation",
-        "Implemented image warping and alignment achieving 91.8% accuracy",
-        "Trained and optimized YOLOv3 models for embedded deployment",
-        "Integrated multi-modal IoT sensors for remote data collection"
+        "Designed and implemented the complete system from data acquisition to result reporting",
+        "Implemented robust image alignment and warping to achieve 91.8% measurement accuracy",
+        "Trained and deployed YOLOv3 models for real-time detection on embedded devices",
+        "Integrated multi-modal IoT sensors for remote and contactless operation"
       ],
+
       "results": [
-        "Achieved 91.8% accuracy in shot group measurement",
-        "Resulted in peer-reviewed publication at IEEE SAS 2022",
-        "Enabled remote, contactless ballistic analysis",
-        "Integrated complete IoT system for automated data collection"
+        "Achieved 91.8% accuracy in automated shot group measurement",
+        "Resulted in a peer-reviewed publication at IEEE Sensors Applications Symposium (SAS 2022)",
+        "Enabled remote and contactless ballistic analysis",
+        "Delivered a fully integrated vision–IoT measurement system"
       ],
       "media": {
         "type": "youtube",
         "embed_url": "https://youtube.com/embed/l6NRirrmg5o",
-        "description": "dddd"
+        "description": "Demonstration of the full system using safe signal emulation. Bullet holes and gunshot events are simulated, while LoRa communication, Raspberry Pi–based object detection and image processing, and the Android app interface run exactly as they would in a real deployment. After each session, the system computes and displays shot group statistics for the user."
       },
-      "links": {},
+      "links": {
+      },
       "thumbnail": "projects/shot_tracker/shot_tracker.jpeg"
-    }
-  ],
-  "publications": [
-    {
-      "title": "Feasibility of Measuring Shot Group Using LoRa Technology and YOLO V5",
-      "authors": "Dongheon Lee, et al.",
-      "venue": "IEEE Sensors Applications Symposium (SAS)",
-      "year": "2022",
-      "doi_url": "https://doi.org/10.1109/SAS54819.2022.9881356",
-      "pdf_path": "pdf/SAS-2022.pdf"
-    },
-    {
-      "title": "A Case Study on Scenario-Based Mobile Application UI Action Test",
-      "authors": "Dongheon Lee, et al.",
-      "venue": "Korean Institute of Information Scientists and Engineers (KIICE)",
-      "year": "2021",
-      "doi_url": "",
-      "pdf_path": ""
     }
   ],
   "experience": [
@@ -303,6 +332,24 @@
       ]
     }
   ],
+  "publications": [
+    {
+      "title": "Feasibility of Measuring Shot Group Using LoRa Technology and YOLO V5",
+      "authors": "Dongheon Lee, et al.",
+      "venue": "IEEE Sensors Applications Symposium (SAS)",
+      "year": "2022",
+      "doi_url": "https://doi.org/10.1109/SAS54819.2022.9881356",
+      "pdf_path": "pdf/SAS-2022.pdf"
+    },
+    {
+      "title": "A Case Study on Scenario-Based Mobile Application UI Action Test",
+      "authors": "Dongheon Lee, et al.",
+      "venue": "Korean Institute of Information Scientists and Engineers (KIICE)",
+      "year": "2021",
+      "doi_url": "",
+      "pdf_path": ""
+    }
+  ],
   "awards": [
     {
       "name": "Student Engineer of the Year",
@@ -324,15 +371,15 @@
     },
     {
       "name": "Full Scholarship",
-      "org": "Department of CSE, CNU",
-      "year": "4 semesters",
-      "note": "Academic excellence award for 4 semesters"
-    },
-    {
-      "name": "Full Scholarship",
       "org": "Sejong City Foundation",
       "year": "2020",
       "note": "Foundation scholarship for academic achievement"
+    },
+    {
+      "name": "Full Scholarship",
+      "org": "Department of CSE, CNU",
+      "year": "4 semesters",
+      "note": "Academic excellence award for 4 semesters"
     },
     {
       "name": "Partial Scholarship",

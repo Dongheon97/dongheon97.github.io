@@ -1,0 +1,46 @@
+    {
+      "slug": "fixed-wing-mppi-control",
+      "title": "MPPI & MPC-Driven Control Framework for 4-Channel Fixed-Wing UAV",
+      "one_liner": "Developing model-predictive and sample-efficient control frameworks for high-agility fixed-wing UAV navigation (ongoing)",
+      "tags": ["MPPI", "MPC", "Fixed-Wing UAV", "Control Systems", "Simulation-to-Flight Transfer"],
+      "timeframe": "Sep 2025 – Present",
+      "role": "Graduate Researcher",
+      "team": "Networked Control Systems Lab, Purdue University",
+      "stack": ["C/C++", "CUDA", "Python", "ROS 2", "Casadi", "Gazebo"],
+
+      "problem": [
+        "High-agility fixed-wing UAVs require advanced control strategies beyond classical PID for aggressive maneuvers",
+        "Balancing real-time performance with robustness under aerodynamic uncertainty and environmental disturbances is challenging",
+        "Controller designs must transfer effectively from simulation to real flight with minimal retuning"
+      ],
+
+      "approach": [
+        "Formulating Model Predictive Path Integral (MPPI) and Model Predictive Control (MPC) frameworks tailored to 4-channel fixed-wing dynamics",
+        "Designing cost functions and state constraints for aggressive pylon navigation and energy-efficient flight",
+        "Leveraging high-fidelity simulation environments for iterative tuning and stability analysis prior to hardware testing"
+      ],
+
+      "contributions": [
+        "Architected MPPI and MPC-based control frameworks suited for real-time execution on fixed-wing UAVs",
+        "Defined systematic cost structures and parameter schedules for robust trajectory tracking",
+        "Performed preliminary simulation studies characterizing controller behavior under gusts and sensor noise"
+      ],
+
+      "results": [
+        "Ongoing..."
+      ],
+      "media": {
+        "type": "youtube",
+        "embed_url": "https://youtube.com/embed/iQSvy1r1Lko",
+        "description": "@@@@"
+      },
+      "sub_media": {
+        "type": "youtube",
+        "embed_url": "https://www.youtube.com/embed/pzZXI6IHiik",
+        "description": "@@@@"
+      },
+      "links": {
+        "slides": "https://docs.google.com/presentation/d/1ce0av-2WN4mu0gjzh9y-z4s9mejARhAe47wh14bNHGg/edit?usp=sharing"
+      },
+      "thumbnail": "projects/shot_tracker/shot_tracker.jpeg"
+    },

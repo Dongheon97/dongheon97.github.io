@@ -158,9 +158,9 @@ const baseUrl = import.meta.env.BASE_URL;
           html += '<div class="aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg">';
           html += '<iframe src="' + project.media.embed_url + '" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="' + project.title + ' demo"></iframe>';
           html += '</div>';
-          if (project.media.description) {
-            html += '<p class="text-base text-gray-600 mt-3">' + project.media.description + '</p>';
-          }
+          html += '<ul class="space-y-3 text-lg text-gray-700 leading-relaxed">';
+          html += '<li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-gray-900 rounded-full flex-shrink-0"></span><span>' + project.media.description + '</span></li>';
+          html += '</ul>';
           html += '</div>';
 
           if (project.sub_media) {
@@ -168,9 +168,9 @@ const baseUrl = import.meta.env.BASE_URL;
             html += '<div class="aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg">';
             html += '<iframe src="' + project.sub_media.embed_url + '" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="' + project.title + ' sub demo"></iframe>';
             html += '</div>';
-            if (project.sub_media.description) {
-              html += '<p class="text-base text-gray-600 mt-3">' + project.sub_media.description + '</p>';
-            }
+            html += '<ul class="space-y-3 text-lg text-gray-700 leading-relaxed">';
+            html += '<li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-gray-900 rounded-full flex-shrink-0"></span><span>' + project.sub_media.description + '</span></li>';
+            html += '</ul>';
             html += '</div>';
           }
 
