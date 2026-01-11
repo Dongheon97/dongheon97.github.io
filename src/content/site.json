@@ -16,7 +16,7 @@
     "categories": [
       {
         "title": "Robotics & Autonomous Systems",
-        "keywords": ["ROS 1/2", "PX4 Autopilot", "Gazebo", "Isaac Sim"],
+        "keywords": ["ROS 1/2", "PX4 Autopilot", "MAVLink", "QRB-5165", "Gazebo", "Isaac Sim", "OpenAI Gym"],
         "highlight_line": "Building autonomous UAV systems from simulation to real-world deployment"
       },
       {
