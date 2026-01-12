@@ -70,12 +70,7 @@
         "Analysis directly supported proof-of-concept agreements between collaborating companies",
         "Established a reusable evaluation framework for future LiDAR and perception system benchmarking"
       ],
-      "media": {
-        "type": "youtube",
-        "embed_url": "https://www.youtube.com/embed/OOjkADXE0zU",
-        "description": "In-house simulation showing LiDAR point clouds (left) and a drone navigating a dense urban environment (right)."
-      },
-      "sub_media": {
+        "media": {
         "type": "youtube",
         "embed_url": "https://www.youtube.com/embed/97EqxBJj24M",
         "description": "Engineering view of 3D mapping and path planning. The RGB-D map is built from fused LiDAR and camera data, while the green line shows the planned trajectory and waypoints. The system performs real-time collision checking and replanning for autonomous flight."
@@ -115,11 +110,7 @@
         "Validated mesh-based communication as a viable backbone for distributed UAV systems",
         "Enabled real-time sharing of critical agent states including network health, battery, and position"
       ],
-      "media": {
-        "type": "youtube",
-        "embed_url": "https://youtube.com/embed/75kVha7HXeQ",
-        "description": "Field test of a multi-agent UAV system with one user entity (lead UAV), one ground control station (GCS), and three relay UAVs. As the lead UAV moves out of direct communication range, relay drones autonomously take off and position themselves to form a mesh network that maintains connectivity between the UAV and the GCS. The GUI in the lower-left shows real-time network status, battery levels, and positions of all agents. UAVs automatically return to their launch point for battery replacement and rejoin the mission, demonstrating persistent and self-maintaining swarm operation."
-      },
+      "media": {},
       "links": {},
       "thumbnail": "projects/swarm/mesh_network_thumbnail.png"
     },
@@ -156,11 +147,7 @@
         "Enabled reliable navigation and inspection in GPS-denied spaces using LiDAR–vision fused maps",
         "Delivered a 3D world model suitable for both autonomy algorithms and human operators"
       ],
-      "media": {
-        "type": "youtube",
-        "embed_url": "https://youtube.com/embed/j0OiYkcyra4",
-        "description": "Real-world flight demonstrating real-time 3D mapping and post-processed high-fidelity reconstruction. The top-left shows the UAV in flight, the bottom-left shows live 3D mapping, and the right shows the onboard camera stream. After the flight, recorded data is processed with Gaussian Splatting to rapidly generate a significantly higher-quality 3D map."
-      },
+      "media": {},
       "links": {
         "project": "https://www.nist.gov/ctl/pscr/open-innovation-prize-challenges/past-prize-challenges/2023-first-responder-uas-3d-mapping",
         "team": "https://www.nist.gov/ctl/pscr/episci"
