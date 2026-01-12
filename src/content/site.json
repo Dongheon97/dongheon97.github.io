@@ -71,10 +71,8 @@
         "Established a reusable evaluation framework for future LiDAR and perception system benchmarking"
       ],
         "media": {
-        "type": "youtube",
-        "embed_url": "https://www.youtube.com/embed/97EqxBJj24M",
-        "description": "Engineering view of 3D mapping and path planning. The RGB-D map is built from fused LiDAR and camera data, while the green line shows the planned trajectory and waypoints. The system performs real-time collision checking and replanning for autonomous flight."
-      },
+          "description": "No public media available due to NDA. If you are interested in learning more about this project, please reach out to me directly."
+        },
       "links": {},
       "thumbnail": "projects/lidar_eval/poc_thumbnail.png"
     },
@@ -110,7 +108,9 @@
         "Validated mesh-based communication as a viable backbone for distributed UAV systems",
         "Enabled real-time sharing of critical agent states including network health, battery, and position"
       ],
-      "media": {},
+      "media": {
+        "description": "No public media available due to NDA. If you are interested in learning more about this project, please reach out to me directly."
+      },
       "links": {},
       "thumbnail": "projects/swarm/mesh_network_thumbnail.png"
     },
@@ -147,7 +147,9 @@
         "Enabled reliable navigation and inspection in GPS-denied spaces using LiDAR–vision fused maps",
         "Delivered a 3D world model suitable for both autonomy algorithms and human operators"
       ],
-      "media": {},
+      "media": {
+        "description": "No public media available due to NDA. If you are interested in learning more about this project, please reach out to me directly."
+      },
       "links": {
         "project": "https://www.nist.gov/ctl/pscr/open-innovation-prize-challenges/past-prize-challenges/2023-first-responder-uas-3d-mapping",
         "team": "https://www.nist.gov/ctl/pscr/episci"
