@@ -168,6 +168,47 @@
       "thumbnail": "projects/gps-denied-indoor-nav/gdin_thumbnail.png"
     },
     {
+      "slug": "gps-denied-autonomous-uav",
+      "title": "GPS-Denied Autonomous UAV for Indoor Reconnaissance",
+      "one_liner": "Built an autonomous indoor exploration system for micro-UAVs that mapped hazardous GPS-denied spaces while streaming live video and detection results to operators",
+      "tags": ["ROS 1", "PX4", "MAVLink", "Cartographer", "2D LiDAR", "ATAK", "Autonomous Exploration", "Video Streaming"],
+      "timeframe": "Sep 2022 – Apr 2023",
+      "role": "Software Engineering Intern",
+      "team": "EpiSci SwarmSense Team",
+      "stack": ["ROS 1", "PX4", "MAVLink", "Cartographer", "Java", "Android", "2D LiDAR", "Python/C++"],
+      "problem": [
+        "First responders needed a safe way to inspect hazardous indoor spaces such as fire scenes or suspect hideouts before sending personnel inside",
+        "The drone had to autonomously explore and build a usable map in GPS-denied environments while operating with limited onboard sensing",
+        "Operators needed live situational awareness through real-time video and object detection outputs during flight",
+        "Reliable collision avoidance and mission execution depended on clean 2D LiDAR perception and robust communication with the UAV"
+      ],
+      "approach": [
+        "Built an autonomous indoor reconnaissance workflow in which a micro-UAV explored unknown interiors, incrementally mapped the environment, and streamed mission data to operators",
+        "Developed a frontier-search exploration algorithm over 2D occupancy maps and integrated it with Cartographer-based mapping for autonomous path planning",
+        "Improved 2D LiDAR filtering and noise removal to produce cleaner local maps and more reliable collision avoidance behavior",
+        "Created an ATAK custom Android plugin supporting live video streaming, PX4/MAVLink-based mission selection, and engineering display controls for field demonstrations"
+      ],
+      "contributions": [
+        "Advanced a frontier-search algorithm for autonomous exploration and path planning, using BFS-style frontier discovery on 2D maps for drone deployment",
+        "Integrated Cartographer and 2D LiDAR processing with the autonomy stack to improve mapping quality and collision avoidance performance",
+        "Developed an ATAK custom plugin Android application with video streaming, PX4-based drone control, and mission selection capabilities",
+        "Validated real-time communication between the tablet interface and the physical drone during field testing and live demonstrations"
+      ],
+      "results": [
+        "Successfully demonstrated autonomous indoor UAV operation in front of police and fire stakeholders at San Bernardino International Airport in California",
+        "Enabled real-time operator awareness through live video streaming, mission control, and in-field communication with the actual drone",
+        "Improved map quality and obstacle handling through enhanced 2D LiDAR filtering and collision avoidance support",
+        "Established the autonomy and operator-interface foundation that later evolved into more advanced GPS-denied indoor mapping efforts"
+      ],
+      "media": {
+        "type": "youtube",
+        "embed_url": "https://www.youtube.com/embed/8UBi0OW1Kno",
+        "description": "No public demo media is available for this earlier project. The embedded video is a related later indoor autonomy effort shown as a temporary placeholder; if you are interested in this project specifically, please reach out to me directly."
+      },
+      "links": {},
+      "thumbnail": "projects/gps-denied-indoor-nav_intern/san_bernadino_thumbnail.png"
+    },
+    {
       "slug": "beyondgrip-slip-recovery",
       "title": "BeyondGrip – Physics-Informed RL for Slip Recovery",
       "one_liner": "Team project on using physics-informed reinforcement learning to recover racecars from loss of tire grip",
