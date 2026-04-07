@@ -71,6 +71,8 @@
         "Established a reusable evaluation framework for future LiDAR and perception system benchmarking"
       ],
       "media": {
+        "type": "youtube",
+        "embed_url": "https://www.youtube.com/embed/OOjkADXE0zU",
         "description": "No public media available due to NDA. If you are interested in learning more about this project, please reach out to me directly."
       },
       "sub_media": {
@@ -114,6 +116,8 @@
         "Enabled real-time sharing of critical agent states including network health, battery, and position"
       ],
       "media": {
+        "type": "youtube",
+        "embed_url": "https://www.youtube.com/embed/75kVha7HXeQ",
         "description": "No public media available due to NDA. If you are interested in learning more about this project, please reach out to me directly."
       },
       "links": {},
@@ -153,6 +157,8 @@
         "Delivered a 3D world model suitable for both autonomy algorithms and human operators"
       ],
       "media": {
+        "type": "youtube",
+        "embed_url": "https://www.youtube.com/embed/j0OiYkcyra4",
         "description": "No public media available due to NDA. If you are interested in learning more about this project, please reach out to me directly."
       },
       "links": {
